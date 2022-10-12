@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { compose, layout, LayoutProps, space, SpaceProps } from 'styled-system';
-import { Theme } from 'styles/theme';
+import { Theme ,theme} from 'styles/theme';
 
 const defaultButtonProps = compose(layout, space);
 
@@ -18,6 +18,9 @@ export type ButtonStyles = Pick<
 
 export const BaseButton = styled.button<ButtonStyles>`
 	display: block;
+	background-color: ${theme.colors.secondary};
+	color:${theme.colors.primary};
+	border:none;
 	padding: '0.5rem 1rem';
 	width: 100%;
 	font-weight: ${({ theme }) => theme.fontWeights.fw700};
