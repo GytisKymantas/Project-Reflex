@@ -6,18 +6,45 @@ import { Logo } from "assets/svg/Logo";
 import { zIndex } from "styled-system";
 import { BenefitFact } from "../elements/BenefitFact";
 import { GridWrapper } from "components/wrappers/GridWrapper";
+import { StackIcon } from "assets/svg/StackIcon";
+import { ChipIcon } from "assets/svg/ChipIcon";
+import { GraphIcon } from "assets/svg/GraphIcon";
+import { TimeIcon } from "assets/svg/TimeIcon";
+
+const ICONS = [
+  {
+    icon: <GraphIcon />,
+    title: "Duis dapibus interdum auctor",
+    id: 1,
+  },
+  {
+    icon: <TimeIcon />,
+    title: "Aenean ac turpis blandit",
+    id: 2,
+  },
+  {
+    icon: <StackIcon />,
+    title: "Nulla quis nisi facilisis",
+    id: 3,
+  },
+  {
+    icon: <ChipIcon />,
+    title: "Aenean faucibus aliquet erat",
+    id: 4,
+  },
+];
 
 export const BenefitsSection = () => {
   return (
-    <SectionWrapperStyled>
+    <SectionWrapperStyled pb="204px">
+      <BackgroundContainer position="absolute" width="100%">
+        <Image src="team" alt={"team"} width="100%" height="1500px" />
+      </BackgroundContainer>
       <ContainerStlyed>
-        <Box mt="fs180" mb="123px">
-          <Typography color="secondary" type="h1" lineHeight={"63px"}>
-            {" "}
-            Our benefits{" "}
-          </Typography>
+        <Box pt="112px" mb="123px">
+          <TypographyStyled color="primary"> Our benefits </TypographyStyled>
           <Typography
-            color="secondary"
+            color="primary"
             fontSize="fs28"
             lineHeight="lh38"
             type="span"
@@ -28,22 +55,30 @@ export const BenefitsSection = () => {
           </Typography>
         </Box>
         <GridWrapper gridTemplateColumns="1fr 1fr" mb="204px" gap="136px">
-          <BenefitFact />
-          <BenefitFact />
-          <BenefitFact />
-          <BenefitFact />
+          {ICONS.map(({ icon, id, title }) => (
+            <BenefitFact icon={icon} key={id} title={title} />
+          ))}{" "}
         </GridWrapper>
       </ContainerStlyed>
     </SectionWrapperStyled>
   );
 };
-const SectionWrapperStyled = styled(SectionWrapper)`
-  background: url();
-  background-position: center;
-  background: gray;
+const SectionWrapperStyled = styled(Box)`
+  background: rgba(0, 29, 31, 0.75);
 `;
 
 const ContainerStlyed = styled(Container)`
   /* background: gray; */
 `;
-const BoxStyled = styled(Box)``;
+const TypographyStyled = styled(Typography)`
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 84px;
+  margin-bottom: 16px;
+`;
+
+const BackgroundContainer = styled(Box)`
+  z-index: -1;
+`;

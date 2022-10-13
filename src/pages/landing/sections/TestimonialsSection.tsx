@@ -10,40 +10,36 @@ import { BenefitFact } from "../elements/BenefitFact";
 import { FlexWrapper } from "components/wrappers/FlexWrapper";
 import { GridWrapper } from "components/wrappers/GridWrapper";
 
+const STARS = ["1", "2", "3", "4", "5"];
 export const TestimonialsSection = () => {
   return (
     <SectionWrapperStyled>
       <ContainerStlyed>
-        <Box mt="112px" mb="123px">
-          <Typography color="secondary" type="h1" lineHeight={"63px"}>
-            {" "}
-            Testimonials{" "}
-          </Typography>
+        <Box pt="112px" mb="123px">
+          <TypographyStyled color="primary"> Testimonials </TypographyStyled>
         </Box>
 
-        <FlexWrapper mb="156px">
+        <FlexWrapper>
           <Box mr="105px" width="100%">
-            <Typography color="secondary"> Susana D. </Typography>
-            <Typography color="secondary">
+            <Author color="primary"> Susana D. </Author>
+            <Profession color="primary">
               {" "}
               Marketing and Communication{" "}
-            </Typography>
+            </Profession>
           </Box>
           <Box>
-            <Typography color="secondary">
+            <ParagraphStyled color="primary" pb="13px">
               {" "}
               “Nunc a condimentum lorem. Nulla quis nisi facilisis, vulputate
               eros vitae, aliquam mi. Pellentesque habitant morbi tristique
               senectus et netus et malesuada fames ac turpis egestas. Cras
               interdum sed nisl quis sollicitudin. Pellentesque sit amet blandit
               lectus, et malesuada libero.”
-            </Typography>
-            <Box>
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
+            </ParagraphStyled>
+            <Box pb="156px">
+              {STARS.map((star) => (
+                <StarIcon key={star} />
+              ))}
             </Box>
           </Box>
         </FlexWrapper>
@@ -51,10 +47,54 @@ export const TestimonialsSection = () => {
     </SectionWrapperStyled>
   );
 };
-const SectionWrapperStyled = styled(SectionWrapper)`
+const SectionWrapperStyled = styled(Box)`
   background: url();
   background-position: center;
   background: ${theme.colors.Dark};
+`;
+
+const Author = styled(Typography)`
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+`;
+
+const Profession = styled(Typography)`
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+`;
+
+const TypographyStyled = styled(Typography)`
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 84px;
+  display: flex;
+  align-items: center;
+`;
+
+const ParagraphStyled = styled(Typography)`
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
 `;
 
 const ContainerStlyed = styled(Container)`

@@ -41,9 +41,6 @@ export const AboutSection = () => {
           {ICONS.map(({ icon }) => (
             <FeatureCard icon={icon} />
           ))}
-          {/* <FeatureCard icon={icon} />
-          <FeatureCard icon={icon} />
-          <FeatureCard icon={icon} /> */}
         </FlexWrapper>
       </ContainerStlyed>
       <Box width="200px" margin="113px auto 116px auto">
