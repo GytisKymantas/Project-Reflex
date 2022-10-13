@@ -7,13 +7,18 @@ import { zIndex } from "styled-system";
 
 export const LandingSection = () => {
   return (
-    <SectionWrapperStyled>
-      <ContainerStlyed>
-        <BoxStyled>
+    <SectionWrapperStyled as="section" pb="362px">
+      <ContainerStlyed className="ok">
+        <BoxStyled mt="62px">
           <Logo />
         </BoxStyled>
-        <Box mt="fs180" mb="362px" width="548px">
-          <Typography color="secondary" type="h1" lineHeight={"63px"}>
+        <Box mt="fs180" width="548px">
+          <Typography
+            color="secondary"
+            type="h1"
+            fontFamily="Roboto Slab"
+            lineHeight={"63px"}
+          >
             {" "}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
           </Typography>
@@ -21,6 +26,7 @@ export const LandingSection = () => {
             color="secondary"
             fontSize="fs28"
             lineHeight="lh38"
+            fontFamily="Open Sans"
             type="span"
           >
             Aenean consectetur gravida sem sed pharetra. Vestibulum non
@@ -31,9 +37,8 @@ export const LandingSection = () => {
     </SectionWrapperStyled>
   );
 };
-const SectionWrapperStyled = styled(SectionWrapper)`
-  background: url();
-  background-position: center;
+const SectionWrapperStyled = styled(Box)`
+  background: gray;
 `;
 
 const ContainerStlyed = styled(Container)`
