@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, SectionWrapper, Typography, Image } from "components";
 import { BaseButton } from "components/buttons/elements/BaseButton";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Container } from "components/wrappers/Container";
 import { Logo } from "assets/svg/Logo";
 import { theme } from "styles/theme";
@@ -29,22 +29,22 @@ const ICONS = [
 
 export const AboutSection = () => {
   return (
-    <SectionWrapperStyled as="section" p="112px 0 112px 0">
+    <SectionWrapperStyled as="section" py={{ _: "80px", ltablet: "115px" }}>
       <ContainerStlyed>
-        <BoxStyled mb="85px">
-          <TypographyStyled color="primary" type="h2">
+        <BoxStyled mb="s85" textAlign={{ _: "center", ltablet: "left" }}>
+          <TypographyStyled color="primary">
             {" "}
             About our features
           </TypographyStyled>{" "}
         </BoxStyled>
-        <FlexWrapper>
+        <FlexWrapper flexDirection={{ _: "column", ltablet: "row" }} gap="80px">
           {ICONS.map(({ icon }) => (
             <FeatureCard icon={icon} />
           ))}
         </FlexWrapper>
       </ContainerStlyed>
-      <Box width="200px" margin="113px auto 116px auto">
-        <BaseButtonStyled color="primary" type="button" padding="15px 40px">
+      <Box mt="s115" width={{ _: "250px", ltablet: "390px" }} mx="auto">
+        <BaseButtonStyled color="primary" type="button">
           Lorem Ipsum
         </BaseButtonStyled>
       </Box>
@@ -54,6 +54,8 @@ export const AboutSection = () => {
 const SectionWrapperStyled = styled(Box)`
   background: ${theme.colors.lightDark};
   background-position: center;
+  /* padding-top: 120px;
+  padding-bottom: 120px; */
 `;
 
 const ContainerStlyed = styled(Container)`
@@ -62,20 +64,17 @@ const ContainerStlyed = styled(Container)`
 const BoxStyled = styled(Box)``;
 
 const BaseButtonStyled = styled(BaseButton)`
-  width: 390px;
+  width: 100%;
   font-family: "Open Sans";
-  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 33px;
+  margin: 0 auto;
+  padding: 16px 40px;
 `;
 
 const TypographyStyled = styled(Typography)`
-  font-family: "Roboto Slab";
-  font-style: normal;
   font-weight: 400;
   font-size: 64px;
   line-height: 84px;
-  display: flex;
-  align-items: center;
 `;

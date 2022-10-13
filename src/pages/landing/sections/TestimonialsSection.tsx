@@ -1,34 +1,52 @@
 import React from "react";
-import { Box, SectionWrapper, Typography, Image } from "components";
-import styled from "styled-components";
+import { Box, Typography } from "components";
+import styled from "styled-components/macro";
 import { Container } from "components/wrappers/Container";
-import { Logo } from "assets/svg/Logo";
-import { zIndex } from "styled-system";
+
 import { StarIcon } from "assets/svg/StarIcon";
 import { theme } from "styles/theme";
-import { BenefitFact } from "../elements/BenefitFact";
 import { FlexWrapper } from "components/wrappers/FlexWrapper";
-import { GridWrapper } from "components/wrappers/GridWrapper";
 
 const STARS = ["1", "2", "3", "4", "5"];
-export const TestimonialsSection = () => {
+
+export const TestimonialsSection: React.FC = () => {
   return (
     <SectionWrapperStyled>
       <ContainerStlyed>
-        <Box pt="112px" mb="123px">
-          <TypographyStyled color="primary"> Testimonials </TypographyStyled>
+        <Box
+          pt={{ _: "80px", ltablet: "s115" }}
+          mb={{ _: "60px", ltablet: "s125" }}
+          textAlign={{ _: "center", ltablet: "left" }}
+        >
+          <Typography
+            fontWeight={400}
+            fontSize={{ _: "50px", ltablet: "64px" }}
+            lineHeight="84px"
+            color="primary"
+          >
+            Testimonials
+          </Typography>
         </Box>
 
-        <FlexWrapper>
-          <Box mr="105px" width="100%">
-            <Author color="primary"> Susana D. </Author>
-            <Profession color="primary">
+        <FlexWrapper flexDirection={{ _: "column", ltablet: "row" }}>
+          <Box mr="s105" mb={{ _: "s60", ltablet: "0" }} width="100%">
+            <Author
+              color="primary"
+              textAlign={{ _: "center", ltablet: "left" }}
+            >
+              {" "}
+              Susana D.{" "}
+            </Author>
+            <Profession
+              color="primary"
+              textAlign={{ _: "center", ltablet: "left" }}
+            >
               {" "}
               Marketing and Communication{" "}
             </Profession>
           </Box>
           <Box>
-            <ParagraphStyled color="primary" pb="13px">
+            <ParagraphStyled color="primary" pb="s16">
               {" "}
               “Nunc a condimentum lorem. Nulla quis nisi facilisis, vulputate
               eros vitae, aliquam mi. Pellentesque habitant morbi tristique
@@ -36,7 +54,7 @@ export const TestimonialsSection = () => {
               interdum sed nisl quis sollicitudin. Pellentesque sit amet blandit
               lectus, et malesuada libero.”
             </ParagraphStyled>
-            <Box pb="156px">
+            <Box pb="s150" textAlign={{ _: "center", ltablet: "left" }}>
               {STARS.map((star) => (
                 <StarIcon key={star} />
               ))}
@@ -55,36 +73,18 @@ const SectionWrapperStyled = styled(Box)`
 
 const Author = styled(Typography)`
   font-family: "Open Sans";
-  font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 44px;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
   text-transform: uppercase;
 `;
 
 const Profession = styled(Typography)`
   font-family: "Open Sans";
-  font-style: normal;
   font-weight: 300;
   font-size: 19px;
   line-height: 27px;
-  display: flex;
-  align-items: center;
   text-transform: uppercase;
-`;
-
-const TypographyStyled = styled(Typography)`
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 84px;
-  display: flex;
-  align-items: center;
 `;
 
 const ParagraphStyled = styled(Typography)`
@@ -97,7 +97,4 @@ const ParagraphStyled = styled(Typography)`
   align-items: center;
 `;
 
-const ContainerStlyed = styled(Container)`
-  /* background: gray; */
-`;
-const BoxStyled = styled(Box)``;
+const ContainerStlyed = styled(Container)``;

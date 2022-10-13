@@ -1,6 +1,6 @@
-import React, { StrictMode } from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components/macro';
-import { theme } from 'styles/theme';
+import React, { StrictMode } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components/macro";
+import { theme } from "styles/theme";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
     overflow: hidden auto;
+	font-style: normal;
 }
 html {
     font-family: ${theme.fontFamily.primary};
@@ -16,10 +17,10 @@ html {
 `;
 
 export const wrapRootElement = ({ element }: any) => (
-	<StrictMode>
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-			{element}
-		</ThemeProvider>
-	</StrictMode>
+  <StrictMode>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {element}
+    </ThemeProvider>
+  </StrictMode>
 );

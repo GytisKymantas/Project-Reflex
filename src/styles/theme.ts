@@ -9,7 +9,8 @@ const colors = {
 
 export const theme = {
 	colors,
-	fontFamily: { primary: 'Red Hat Display' },
+	fontFamily: { primary: 'Roboto Slab',
+secondary:'Open Sans' },
 	fontSizes: {
 		fs16: '1rem',
 		fs20:'1.25rem',
@@ -24,14 +25,30 @@ export const theme = {
 	},
 	breakpoints: ['24rem', '47rem', '90rem'] as unknown as Breakpoints,
 	space: {
-		fs16: '1rem',
-		fs180:'11.25rem',
+		s0:"0",
+		auto:"auto",
+		s16: '1rem',
+		s40: '40px',
+		s60: '60px',
+		s85:"85px",
+		s105:"105px",
+		s110:"110px",
+		s115:"115px",
+		s120:"120px",
+		s125:"125px",
+		s135:"135px",
+		s150:"150px",
+		s180:'11.25rem',
+		s200:"200px",
+		s210:"210px",
+		s360:"360px",
+
 	},
 	typography: {
 		h1: {
 			fontSize: '48px',
 			lineHeight: '4rem',
-			fontSizeMobile: '32px',
+			fontSizeMobile: '34px',
 			fontWeight: 400,
 		},
 		h2: {

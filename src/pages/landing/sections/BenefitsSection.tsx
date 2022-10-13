@@ -1,14 +1,14 @@
 import React from "react";
-import { Box, SectionWrapper, Typography, Image } from "components";
-import styled from "styled-components";
+import { Box, Typography, Image } from "components";
+import styled from "styled-components/macro";
 import { Container } from "components/wrappers/Container";
-import { Logo } from "assets/svg/Logo";
-import { zIndex } from "styled-system";
+
 import { BenefitFact } from "../elements/BenefitFact";
 import { GridWrapper } from "components/wrappers/GridWrapper";
 import { StackIcon } from "assets/svg/StackIcon";
 import { ChipIcon } from "assets/svg/ChipIcon";
 import { GraphIcon } from "assets/svg/GraphIcon";
+import { useQuery } from "styles/breakpoints";
 import { TimeIcon } from "assets/svg/TimeIcon";
 
 const ICONS = [
@@ -35,17 +35,36 @@ const ICONS = [
 ];
 
 export const BenefitsSection = () => {
+  const { isTablet } = useQuery();
   return (
-    <SectionWrapperStyled pb="204px">
-      <BackgroundContainer position="absolute" width="100%">
-        <Image src="team" alt={"team"} width="100%" height="1500px" />
+    <SectionWrapperStyled
+      pb={{ _: "s0", ltablet: "s200" }}
+      height={{ _: "1450px", ltablet: "100vh" }}
+    >
+      <BackgroundContainer position="absolute" minHeight="100%" minWidth="100%">
+        {isTablet ? (
+          <Image src="teamMobile" alt="team" height="1450px" width="100%" />
+        ) : (
+          <Image src="team" alt="team" height="100vh" width="100%" />
+        )}
       </BackgroundContainer>
       <ContainerStlyed>
-        <Box pt="112px" mb="123px">
-          <TypographyStyled color="primary"> Our benefits </TypographyStyled>
+        <Box
+          pt={{ _: "80px", ltablet: "s115" }}
+          mb={{ _: "s30", ltablet: "s120" }}
+          textAlign={{ _: "center", ltablet: "left" }}
+        >
+          <TypographyStyled
+            lineHeight={{ _: "64px", ltablet: "84px" }}
+            color="primary"
+          >
+            {" "}
+            Our benefits{" "}
+          </TypographyStyled>
+
           <Typography
             color="primary"
-            fontSize="fs28"
+            fontSize={{ _: "24px", ltablet: "fs28" }}
             lineHeight="lh38"
             type="span"
           >
@@ -54,7 +73,11 @@ export const BenefitsSection = () => {
             lobortis mauris.
           </Typography>
         </Box>
-        <GridWrapper gridTemplateColumns="1fr 1fr" mb="204px" gap="136px">
+        <GridWrapper
+          gridTemplateColumns={{ _: "1fr", ltablet: "1fr 1fr" }}
+          mb={{ _: "0", ltablet: "s200" }}
+          gap="s135"
+        >
           {ICONS.map(({ icon, id, title }) => (
             <BenefitFact icon={icon} key={id} title={title} />
           ))}{" "}
@@ -71,11 +94,8 @@ const ContainerStlyed = styled(Container)`
   /* background: gray; */
 `;
 const TypographyStyled = styled(Typography)`
-  font-family: "Roboto Slab";
-  font-style: normal;
   font-weight: 400;
   font-size: 64px;
-  line-height: 84px;
   margin-bottom: 16px;
 `;
 

@@ -19,14 +19,29 @@ export const BenefitFact: React.FC<BenefitFactProps> = ({ icon, title }) => {
   return (
     <ContainerStyled>
       <Container p="44px 35px 0 35px">
-        <FlexWrapper>
-          <FlexWrapper mt="20px">{icon}</FlexWrapper>
+        <FlexWrapper flexDirection={{ _: "column", ltablet: "row" }}>
+          <FlexWrapper
+            mt="20px"
+            justifyContent={{ _: "center", ltablet: "left" }}
+            mb={{ _: "20px", ltablet: "0" }}
+          >
+            {icon}
+          </FlexWrapper>
           <Box ml="37px" width="400px">
-            <TypographyStyled mb="20px" fs="fs20" color="primary">
+            <TypographyStyled
+              mb={{ _: "10px", ltablet: "s20" }}
+              fs="fs20"
+              textAlign={{ _: "center", ltablet: "left" }}
+              color="primary"
+            >
               {" "}
               {title}
             </TypographyStyled>{" "}
-            <ParagraphStyled fs="fs20" color="primary">
+            <ParagraphStyled
+              fs="fs20"
+              color="primary"
+              textAlign={{ _: "center", ltablet: "left" }}
+            >
               {" "}
               Etiam semper ipsum et enim interdum sagittis vel et enim. Nam
               lacinia quam at lacus laoreet posuere. Morbi et risus eu diam
