@@ -6,7 +6,7 @@ import { Logo } from "assets/svg/Logo";
 
 export const LandingSection: React.FC = () => (
   <SectionWrapperStyled as="section">
-    <Box height="100vh" maxWidth="94.5625rem" mx="auto">
+    <Box height="100vh" maxWidth="1513px" mx="auto">
       <BackgroundContainer
         position="absolute"
         minHeight="100%"
@@ -15,38 +15,32 @@ export const LandingSection: React.FC = () => (
       >
         <Image src="office" alt="office" height="100vh" width="100%" />
       </BackgroundContainer>
-      <Box pl={{ _: "s0", ltablet: "s210" }}>
-        <Box
-          pt={{ _: "s180", ltablet: "s65" }}
-          textAlign={{ _: "center", ltablet: "left" }}
-        >
+      <Box pl={{ _: "0", ltablet: "200px" }}>
+        <Box p="64px 0" textAlign={{ _: "center", ltablet: "left" }}>
           <Logo />
         </Box>
         <Box
-          width={{ _: "25rem", ltablet: "34.25rem" }}
-          mt={{ _: "s120", ltablet: "s180" }}
+          width={{ _: "100%", ltablet: "548px" }}
           mx={{ _: "auto", ltablet: "s0" }}
         >
-          <FlexWrapper
-            justifyContent="center"
-            width={{ _: "23.4375rem", ltablet: "100%" }}
-          >
+          <FlexWrapper justifyContent="center" width="100%">
             <Typography
               color="primary"
-              type="h1"
               fontFamily="Roboto Slab"
               textAlign={{ _: "center", ltablet: "left" }}
-              lineHeight="lh64"
+              lineHeight="lh63p3"
+              fontSize="fs48"
+              fontWeight="fw400"
+              mb="10px"
             >
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </FlexWrapper>
 
           <Box
-            mt={{ _: "s40", ltablet: "s0" }}
+            mt={{ _: "40px", ltablet: "0" }}
             textAlign={{ _: "center", ltablet: "left" }}
-            width={{ _: "23.4375rem", ltablet: "100%" }}
+            width="100%"
           >
             <Typography
               color="primary"

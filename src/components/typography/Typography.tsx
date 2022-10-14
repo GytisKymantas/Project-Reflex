@@ -34,16 +34,16 @@ type AsAttributeType = string | React.ComponentType;
 const typographyProperties = compose(
   textAlign,
   fontWeight,
-  lineHeight,
   textStyle,
   typography,
+  lineHeight,
   space
 );
 
 export interface TextProps
-  extends SpaceProps<Theme>,
-    TypographyProps<Theme>,
-    LineHeightProps<Theme> {
+  extends SpaceProps,
+    LineHeightProps<Theme>,
+    TypographyProps<Theme> {
   color?: Colors;
   type?: TextType;
   textTransform?: Property.TextTransform;

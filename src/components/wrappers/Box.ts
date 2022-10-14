@@ -46,7 +46,7 @@ interface Styles<T>
 		LayoutProps<T>,
 		ShadowProps<T>,
 		TextAlignProps<T>,
-		SpaceProps<T> {}
+		SpaceProps {}
 
 export const Box = styled.div<Styles<Theme>>`
 	&& {

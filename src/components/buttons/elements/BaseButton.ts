@@ -21,7 +21,7 @@ export const BaseButton = styled.button<ButtonStyles>`
 	background-color: ${theme.colors.secondary};
 	color:${theme.colors.primary};
 	border:none;
-	padding: '0.5rem 1rem';
+	padding: '8px 16px';
 	width: 100%;
 	font-weight: ${({ theme }) => theme.fontWeights.fw700};
 

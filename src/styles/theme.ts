@@ -11,6 +11,7 @@ export const theme = {
   colors,
   fontFamily: { primary: "Roboto Slab", secondary: "Open Sans" },
   fontSizes: {
+    fs10: "0.625rem",
     fs15: "0.9375rem",
     fs16: "1rem",
     fs19: "1.1875rem",
@@ -19,6 +20,7 @@ export const theme = {
     fs24: "1.5rem",
     fs28: "1.75rem",
     fs32: "2rem",
+    fs48: "3rem",
     fs50: "3.125rem",
     fs64: "4rem",
   },
@@ -33,12 +35,12 @@ export const theme = {
   lineHeights: {
     lh: "1rem",
     lh20: "1.25rem",
-    lh27: "1.6875rem",
+    lh27p24: "27.24px",
     lh30: "1.875rem",
     lh38: "2.375rem",
     lh44: "2.75rem",
-    lh64: "4rem",
-    lh84: "5.25rem",
+    lh63p3: "63.3px",
+    lh84p41: "84.41px",
   },
   breakpoints: ["24rem", "47rem", "90rem"] as unknown as Breakpoints,
   space: {

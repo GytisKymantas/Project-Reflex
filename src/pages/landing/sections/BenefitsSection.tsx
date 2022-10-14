@@ -10,11 +10,11 @@ import { GridWrapper } from "components/wrappers/GridWrapper";
 export const BenefitsSection: React.FC = () => {
   const { isLgDesktop } = useQuery();
   return (
-    <BoxContainer>
+    <BoxContainer as="section">
       <Box
-        pb={{ _: "s0", ltablet: "s200" }}
-        height={{ _: "100%", desktop: "60.4375rem" }}
-        maxWidth="94.5rem"
+        pb={{ _: "100px", ltablet: "200px" }}
+        height={{ _: "100%", desktop: "967px" }}
+        maxWidth="1512px"
         mx="auto"
       >
         <Box
@@ -25,54 +25,51 @@ export const BenefitsSection: React.FC = () => {
           width="100%"
         >
           {isLgDesktop ? (
-            <Image
-              src="teamMobile"
-              alt="team"
-              height="90.625rem"
-              width="100%"
-            />
+            <Image src="teamMobile" alt="team" height="1450px" width="100%" />
           ) : (
-            <Image src="team" alt="team" height="60.4375rem" width="100%" />
+            <Image src="team" alt="team" height="967px" width="100%" />
           )}
         </Box>
         <Box>
           <Box
-            pt={{ _: "s80", ltablet: "s115" }}
-            mb={{ _: "s30", ltablet: "s80" }}
-            ml={{ _: "s0", desktop: "s200" }}
+            pt={{ _: "80px", ltablet: "112px" }}
+            pl={{ _: "0", desktop: "200px" }}
             textAlign={{ _: "center", desktop: "left" }}
-            width={{ _: "69.5rem", desktop: "69.5rem" }}
           >
             <Typography
-              lineHeight={{ _: "lh64", ltablet: "lh84" }}
+              lineHeight={{ _: "lh63p3", ltablet: "lh84p41" }}
               color="primary"
               mb="16px"
-              fontSize="fs64"
+              fontSize={{ _: "fs48", desktop: "fs64" }}
               fontWeight="fw400"
             >
-              {" "}
-              Our benefits{" "}
+              Our benefits
             </Typography>
-
-            <Typography
-              color="primary"
-              fontSize="fs20"
-              lineHeight="lh38"
-              type="span"
+            <Box
+              width={{ _: "100%", desktop: "1112px" }}
+              mb={{ _: "50px", ltablet: "123px" }}
+              mx={isLgDesktop ? "auto" : ""}
             >
-              Suspendisse porttitor ex a mollis consectetur. Donec egestas,
-              libero sed viverra sodales, dui eros pulvinar diam, at mollis
-              libero purus lobortis mauris.
-            </Typography>
+              <Typography
+                color="primary"
+                fontSize={{ _: "fs16", desktop: "fs20" }}
+                lineHeight={{ _: "lh27p24", ltablet: "lh38" }}
+                type="span"
+              >
+                Suspendisse porttitor ex a mollis consectetur. Donec egestas,
+                libero sed viverra sodales, dui eros pulvinar diam, at mollis
+                libero purus lobortis mauris.
+              </Typography>
+            </Box>
           </Box>
           <Box maxWidth="1180px" mx="auto">
             <GridWrapper
-              gridTemplateColumns={{ _: "1fr", desktop: "1fr 1fr" }}
-              mb={{ _: "s0", desktop: "s200" }}
+              gridTemplateColumns={{ _: "1fr", desktop: "repeat(2,1fr)" }}
+              mb={{ _: "0", desktop: "200px" }}
             >
               {ICONS.map(({ icon, id, title }) => (
                 <BenefitFact icon={icon} key={id} title={title} />
-              ))}{" "}
+              ))}
             </GridWrapper>
           </Box>
         </Box>

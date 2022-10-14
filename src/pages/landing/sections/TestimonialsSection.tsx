@@ -9,90 +9,89 @@ import { FlexWrapper } from "components/wrappers/FlexWrapper";
 import { STARS } from "constants/constants";
 
 export const TestimonialsSection: React.FC = () => {
-  const { isTablet } = useQuery();
+  const { isTablet, isSmDesktop } = useQuery();
   return (
     <SectionWrapperStyled
-      height={{ _: "100%", ltablet: "36.375rem" }}
-      maxWidth="94.5rem"
+      p="113px 0 152px 0"
+      as="section"
+      maxWidth="1512px"
       mx="auto"
     >
       <Box>
         <Box
-          pt={{ _: "s80", ltablet: "s115" }}
-          mb={{ _: "s60", ltablet: "s0" }}
+          m={{ _: "0 0 60px 0", ltablet: "0 0 93px 200px" }}
           textAlign={{ _: "center", ltablet: "left" }}
-          ml={{ _: "s0", ltablet: "s200" }}
         >
           <Typography
             fontWeight="fw400"
             fontSize={{ _: "fs50", ltablet: "fs64" }}
-            lineHeight="lh84"
+            lineHeight="lh84p41"
             color="primary"
           >
             Testimonials
           </Typography>
         </Box>
-        <FlexWrapper
-          mt={{ _: "s0", ltablet: "s95" }}
-          flexDirection={isTablet ? "column" : "row"}
-        >
+        <FlexWrapper flexDirection={isSmDesktop ? "column" : "row"}>
           <Box
             mb={{ _: "s60", ltablet: "s0" }}
             ml={{ _: "s0", ltablet: "s200" }}
-            width="100%"
           >
-            <Typography
-              color="primary"
-              textAlign={{ _: "center", ltablet: "left" }}
-              fontFamily="Open Sans"
-              fontWeight="fw400"
-              fontSize="fs32"
-              lineHeight="lh44"
-              textTransform="uppercase"
-              mb="s10"
+            <Box width="163px" mx={{ _: "auto", ltablet: "0" }}>
+              <Typography
+                color="primary"
+                textAlign={{ _: "center", ltablet: "left" }}
+                fontFamily="Open Sans"
+                fontWeight="fw400"
+                fontSize="fs32"
+                lineHeight="lh44"
+                textTransform="uppercase"
+              >
+                Susana D.
+              </Typography>
+            </Box>
+            <Box
+              width="329px"
+              ml={isTablet ? "auto" : ""}
+              mr={{ _: "auto", ltablet: "105px" }}
             >
-              {" "}
-              Susana D.{" "}
-            </Typography>
-            <Typography
-              fontFamily="Open Sans"
-              fontWeight="fw300"
-              fontSize="fs19"
-              lineHeight="lh27"
-              textTransform="uppercase"
-              color="primary"
-              textAlign={{ _: "center", ltablet: "left" }}
-            >
-              {" "}
-              Marketing and Communication{" "}
-            </Typography>
+              <Typography
+                fontFamily="Open Sans"
+                fontWeight="fw300"
+                fontSize={{ _: "fs16", ltablet: "fs20" }}
+                lineHeight="lh27p24"
+                textTransform="uppercase"
+                color="primary"
+                textAlign={{ _: "center", ltablet: "left" }}
+              >
+                Marketing and Communication
+              </Typography>
+            </Box>
           </Box>
-          <Box>
+          <Box width={{ _: "100%", ltablet: "673px" }} mx="auto">
             <Typography
               fontFamily="Open Sans"
               fontStyle="italic"
               fontWeight="fw300"
-              fontSize="fs20"
-              lineHeight="lh27"
+              fontSize={{ _: "fs16", ltablet: "fs20" }}
+              lineHeight="lh27p24"
               textAlign={{ _: "center", ltablet: "left" }}
               color="primary"
-              pb="s16"
+              mb="s16"
             >
-              {" "}
               “Nunc a condimentum lorem. Nulla quis nisi facilisis, vulputate
               eros vitae, aliquam mi. Pellentesque habitant morbi tristique
               senectus et netus et malesuada fames ac turpis egestas. Cras
               interdum sed nisl quis sollicitudin. Pellentesque sit amet blandit
               lectus, et malesuada libero.”
             </Typography>
-            <Box
-              pb={{ _: "s80", ltablet: "s140" }}
-              textAlign={{ _: "center", ltablet: "left" }}
+            <FlexWrapper
+              gap="6px"
+              justifyContent={isSmDesktop ? "center" : "row"}
             >
               {STARS.map((star) => (
                 <StarIcon key={star} />
               ))}
-            </Box>
+            </FlexWrapper>
           </Box>
         </FlexWrapper>
       </Box>

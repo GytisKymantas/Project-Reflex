@@ -10,52 +10,53 @@ interface FeatureCardProps {
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title }) => (
-  <ContainerStyled width="18.75rem" position="relative">
+  <ContainerStyled width="300px" position="relative">
     <Box position="absolute" top="-7.2%" left="0%">
       <BlackTriangle />
     </Box>
     <RotatedBlackTriangleContainer position="absolute" top="98.9%" left="0%">
       <BlackTriangle />
     </RotatedBlackTriangleContainer>
-    <Box pl="s35">
-      <Box mt="s45" mb="s20">
+    <Box pl="35px">
+      <Box mt="44px" mb="20.62px">
         {icon}
       </Box>
-      <Box mb="s45" width="14.375rem">
+      <Box mb="44px" width="230px">
         <Typography
-          mt="s20"
-          mb="s45"
           fontFamily="Open sans"
-          fontSize="fs24"
+          fontSize="fs20"
           color="primary"
-          lineHeight="lh27"
+          lineHeight="lh27p24"
           fontWeight="fw300"
           textTransform="uppercase"
         >
-          {" "}
-          {title}{" "}
-        </Typography>{" "}
+          {title}
+        </Typography>
       </Box>
     </Box>
-    <ListContainer mb="s60" ml="s20" width="14.375rem" color="primary">
-      <ul>
-        <li>Morbi tortor tortor, c</li> <li>Consectetur in elementum</li>{" "}
-        <li>Sed aliquam sollicitudin</li> <li>Mauris congue tempor tempus</li>
-      </ul>
-    </ListContainer>{" "}
+    <ListContainer
+      pb="2.42px"
+      mb="37px"
+      mx="auto"
+      width="230px"
+      color="primary"
+    >
+      <li>Morbi tortor tortor, c</li> <li>Consectetur in elementum</li>
+      <li>Sed aliquam sollicitudin</li> <li>Mauris congue tempor tempus</li>
+    </ListContainer>
   </ContainerStyled>
 );
 
 const ListContainer = styled(Box)`
   & li {
-    margin-bottom: 1.0625rem;
+    margin-bottom: 12px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
-    font-size: 0.8125rem;
+    font-size: 13px;
   }
   & li::marker {
-    font-size: 0.625rem;
+    font-size: 10px;
   }
 `;
 

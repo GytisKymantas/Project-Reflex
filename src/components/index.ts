@@ -4,7 +4,6 @@ export * from './wrappers/FlexWrapper';
 export * from './wrappers/GridWrapper';
 
 //texts
-// export * from './texts/h1';
 export * from './typography/Typography';
 
 //images
