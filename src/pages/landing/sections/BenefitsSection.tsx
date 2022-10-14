@@ -1,104 +1,86 @@
 import React from "react";
 import { Box, Typography, Image } from "components";
 import styled from "styled-components/macro";
-import { Container } from "components/wrappers/Container";
 
 import { BenefitFact } from "../elements/BenefitFact";
-import { GridWrapper } from "components/wrappers/GridWrapper";
-import { StackIcon } from "assets/svg/StackIcon";
-import { ChipIcon } from "assets/svg/ChipIcon";
-import { GraphIcon } from "assets/svg/GraphIcon";
 import { useQuery } from "styles/breakpoints";
-import { TimeIcon } from "assets/svg/TimeIcon";
+import { ICONS } from "constants/constants";
+import { GridWrapper } from "components/wrappers/GridWrapper";
 
-const ICONS = [
-  {
-    icon: <GraphIcon />,
-    title: "Duis dapibus interdum auctor",
-    id: 1,
-  },
-  {
-    icon: <TimeIcon />,
-    title: "Aenean ac turpis blandit",
-    id: 2,
-  },
-  {
-    icon: <StackIcon />,
-    title: "Nulla quis nisi facilisis",
-    id: 3,
-  },
-  {
-    icon: <ChipIcon />,
-    title: "Aenean faucibus aliquet erat",
-    id: 4,
-  },
-];
-
-export const BenefitsSection = () => {
-  const { isTablet } = useQuery();
+export const BenefitsSection: React.FC = () => {
+  const { isLgDesktop } = useQuery();
   return (
-    <SectionWrapperStyled
-      pb={{ _: "s0", ltablet: "s200" }}
-      height={{ _: "1450px", ltablet: "100vh" }}
-    >
-      <BackgroundContainer position="absolute" minHeight="100%" minWidth="100%">
-        {isTablet ? (
-          <Image src="teamMobile" alt="team" height="1450px" width="100%" />
-        ) : (
-          <Image src="team" alt="team" height="100vh" width="100%" />
-        )}
-      </BackgroundContainer>
-      <ContainerStlyed>
+    <BoxContainer>
+      <Box
+        pb={{ _: "s0", ltablet: "s200" }}
+        height={{ _: "100%", desktop: "60.4375rem" }}
+        maxWidth="94.5rem"
+        mx="auto"
+      >
         <Box
-          pt={{ _: "80px", ltablet: "s115" }}
-          mb={{ _: "s30", ltablet: "s120" }}
-          textAlign={{ _: "center", ltablet: "left" }}
+          position="absolute"
+          minHeight="100%"
+          zIndex="base"
+          left="0"
+          width="100%"
         >
-          <TypographyStyled
-            lineHeight={{ _: "64px", ltablet: "84px" }}
-            color="primary"
-          >
-            {" "}
-            Our benefits{" "}
-          </TypographyStyled>
-
-          <Typography
-            color="primary"
-            fontSize={{ _: "24px", ltablet: "fs28" }}
-            lineHeight="lh38"
-            type="span"
-          >
-            Suspendisse porttitor ex a mollis consectetur. Donec egestas, libero
-            sed viverra sodales, dui eros pulvinar diam, at mollis libero purus
-            lobortis mauris.
-          </Typography>
+          {isLgDesktop ? (
+            <Image
+              src="teamMobile"
+              alt="team"
+              height="90.625rem"
+              width="100%"
+            />
+          ) : (
+            <Image src="team" alt="team" height="60.4375rem" width="100%" />
+          )}
         </Box>
-        <GridWrapper
-          gridTemplateColumns={{ _: "1fr", ltablet: "1fr 1fr" }}
-          mb={{ _: "0", ltablet: "s200" }}
-          gap="s135"
-        >
-          {ICONS.map(({ icon, id, title }) => (
-            <BenefitFact icon={icon} key={id} title={title} />
-          ))}{" "}
-        </GridWrapper>
-      </ContainerStlyed>
-    </SectionWrapperStyled>
+        <Box>
+          <Box
+            pt={{ _: "s80", ltablet: "s115" }}
+            mb={{ _: "s30", ltablet: "s80" }}
+            ml={{ _: "s0", desktop: "s200" }}
+            textAlign={{ _: "center", desktop: "left" }}
+            width={{ _: "69.5rem", desktop: "69.5rem" }}
+          >
+            <Typography
+              lineHeight={{ _: "lh64", ltablet: "lh84" }}
+              color="primary"
+              mb="16px"
+              fontSize="fs64"
+              fontWeight="fw400"
+            >
+              {" "}
+              Our benefits{" "}
+            </Typography>
+
+            <Typography
+              color="primary"
+              fontSize="fs20"
+              lineHeight="lh38"
+              type="span"
+            >
+              Suspendisse porttitor ex a mollis consectetur. Donec egestas,
+              libero sed viverra sodales, dui eros pulvinar diam, at mollis
+              libero purus lobortis mauris.
+            </Typography>
+          </Box>
+          <Box maxWidth="1180px" mx="auto">
+            <GridWrapper
+              gridTemplateColumns={{ _: "1fr", desktop: "1fr 1fr" }}
+              mb={{ _: "s0", desktop: "s200" }}
+            >
+              {ICONS.map(({ icon, id, title }) => (
+                <BenefitFact icon={icon} key={id} title={title} />
+              ))}{" "}
+            </GridWrapper>
+          </Box>
+        </Box>
+      </Box>
+    </BoxContainer>
   );
 };
-const SectionWrapperStyled = styled(Box)`
+
+const BoxContainer = styled(Box)`
   background: rgba(0, 29, 31, 0.75);
-`;
-
-const ContainerStlyed = styled(Container)`
-  /* background: gray; */
-`;
-const TypographyStyled = styled(Typography)`
-  font-weight: 400;
-  font-size: 64px;
-  margin-bottom: 16px;
-`;
-
-const BackgroundContainer = styled(Box)`
-  z-index: -1;
 `;

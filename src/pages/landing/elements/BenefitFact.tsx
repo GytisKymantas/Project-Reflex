@@ -1,44 +1,45 @@
 import React from "react";
-import { Box, SectionWrapper, Typography, Image } from "components";
-import { BaseButton } from "components/buttons/elements/BaseButton";
-import styled from "styled-components";
-import { Container } from "components/wrappers/Container";
-import { Logo } from "assets/svg/Logo";
-import { theme } from "styles/theme";
-import { zIndex } from "styled-system";
-import { PeopleIcon } from "assets/svg/PeopleIcon";
+import { Box, Typography } from "components";
+
+import { useQuery } from "styles/breakpoints";
 import { FlexWrapper } from "components/wrappers/FlexWrapper";
-import { StackIcon } from "assets/svg/StackIcon";
 
 interface BenefitFactProps {
   icon: React.ReactNode;
   title: string;
 }
 export const BenefitFact: React.FC<BenefitFactProps> = ({ icon, title }) => {
-  console.log(icon);
+  const { isTablet, isSmDesktop } = useQuery();
   return (
-    <ContainerStyled>
-      <Container p="44px 35px 0 35px">
-        <FlexWrapper flexDirection={{ _: "column", ltablet: "row" }}>
+    <FlexWrapper justifyContent={isSmDesktop ? "center" : "center"} pb="150px">
+      <Box>
+        <FlexWrapper flexDirection={isTablet ? "column" : "row"}>
           <FlexWrapper
-            mt="20px"
-            justifyContent={{ _: "center", ltablet: "left" }}
-            mb={{ _: "20px", ltablet: "0" }}
+            mt="s20"
+            justifyContent={isTablet ? "center" : "left"}
+            mb={{ _: "s20", ltablet: "s0" }}
           >
             {icon}
           </FlexWrapper>
-          <Box ml="37px" width="400px">
-            <TypographyStyled
-              mb={{ _: "10px", ltablet: "s20" }}
-              fs="fs20"
+          <Box ml={{ ltablet: "s35" }} mx="auto" width="25rem">
+            <Typography
+              mb={{ _: "s10", ltablet: "s20" }}
+              fontFamily="Open Sans"
+              fontWeight="fw300"
+              lineHeight="lh27"
+              textTransform="uppercase"
+              fontSize="fs20"
               textAlign={{ _: "center", ltablet: "left" }}
               color="primary"
             >
               {" "}
               {title}
-            </TypographyStyled>{" "}
-            <ParagraphStyled
-              fs="fs20"
+            </Typography>{" "}
+            <Typography
+              fontFamily="Open Sans"
+              fontWeight="fw400"
+              fontSize="fs15"
+              lineHeight="lh20"
               color="primary"
               textAlign={{ _: "center", ltablet: "left" }}
             >
@@ -46,40 +47,10 @@ export const BenefitFact: React.FC<BenefitFactProps> = ({ icon, title }) => {
               Etiam semper ipsum et enim interdum sagittis vel et enim. Nam
               lacinia quam at lacus laoreet posuere. Morbi et risus eu diam
               pulvinar interdum id ut mauris.{" "}
-            </ParagraphStyled>{" "}
+            </Typography>{" "}
           </Box>
         </FlexWrapper>
-      </Container>
-    </ContainerStyled>
+      </Box>
+    </FlexWrapper>
   );
 };
-const ListContainer = styled(Box)`
-  & li {
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-`;
-
-const TypographyStyled = styled(Typography)`
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 27px;
-  text-transform: uppercase;
-`;
-
-const ParagraphStyled = styled(Typography)`
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-`;
-
-const ContainerStyled = styled(Container)`
-  /* clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%); */
-`;
-const BoxStyled = styled(Box)``;

@@ -4,34 +4,39 @@ import { FlexWrapper } from "components/wrappers/FlexWrapper";
 import styled from "styled-components/macro";
 import { Logo } from "assets/svg/Logo";
 
-export const LandingSection: React.FC = () => {
-  return (
-    <SectionWrapperStyled as="section" height="100vh">
-      <BackgroundContainer position="absolute" minHeight="100%" minWidth="100%">
+export const LandingSection: React.FC = () => (
+  <SectionWrapperStyled as="section">
+    <Box height="100vh" maxWidth="94.5625rem" mx="auto">
+      <BackgroundContainer
+        position="absolute"
+        minHeight="100%"
+        minWidth="100%"
+        left="0"
+      >
         <Image src="office" alt="office" height="100vh" width="100%" />
       </BackgroundContainer>
-      <Box pl={{ _: "0px", ltablet: "s210" }}>
+      <Box pl={{ _: "s0", ltablet: "s210" }}>
         <Box
-          pt={{ _: "100px", ltablet: "s60" }}
+          pt={{ _: "s180", ltablet: "s65" }}
           textAlign={{ _: "center", ltablet: "left" }}
         >
           <Logo />
         </Box>
         <Box
-          width={{ _: "400px", ltablet: "548px" }}
-          mt={{ _: "90px", ltablet: "180px" }}
-          mx={{ _: "auto", ltablet: "0" }}
+          width={{ _: "25rem", ltablet: "34.25rem" }}
+          mt={{ _: "s120", ltablet: "s180" }}
+          mx={{ _: "auto", ltablet: "s0" }}
         >
           <FlexWrapper
             justifyContent="center"
-            width={{ _: "375px", ltablet: "100%" }}
+            width={{ _: "23.4375rem", ltablet: "100%" }}
           >
             <Typography
               color="primary"
               type="h1"
               fontFamily="Roboto Slab"
               textAlign={{ _: "center", ltablet: "left" }}
-              lineHeight={{ _: "30px", ltablet: "63px" }}
+              lineHeight="lh64"
             >
               {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
@@ -39,16 +44,15 @@ export const LandingSection: React.FC = () => {
           </FlexWrapper>
 
           <Box
-            mt={{ _: "40px", ltablet: "0" }}
+            mt={{ _: "s40", ltablet: "s0" }}
             textAlign={{ _: "center", ltablet: "left" }}
-            width={{ _: "375px", ltablet: "100%" }}
+            width={{ _: "23.4375rem", ltablet: "100%" }}
           >
             <Typography
               color="primary"
-              fontSize={{ _: "22px", ltablet: "28px" }}
-              lineHeight={{ _: "20px", ltablet: "38px" }}
+              fontSize={{ _: "fs22", ltablet: "fs28" }}
+              lineHeight={{ _: "lh44", ltablet: "lh38" }}
               fontFamily="Open Sans"
-              type="p"
             >
               Aenean consectetur gravida sem sed pharetra. Vestibulum non
               facilisis lacus, id ultrices sem.
@@ -56,9 +60,10 @@ export const LandingSection: React.FC = () => {
           </Box>
         </Box>
       </Box>
-    </SectionWrapperStyled>
-  );
-};
+    </Box>
+  </SectionWrapperStyled>
+);
+
 const SectionWrapperStyled = styled(Box)`
   background: rgba(0, 29, 31, 0.75);
 `;

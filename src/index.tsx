@@ -9,7 +9,9 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
     overflow: hidden auto;
-	font-style: normal;
+  	font-style: normal;
+    background: ${theme.colors.lightDark};
+
 }
 html {
     font-family: ${theme.fontFamily.primary};

@@ -12,6 +12,8 @@ interface FlexWrapperProps {
 export const FlexWrapper = styled(Box)<FlexWrapperProps>`
   display: flex;
   flex-wrap: ${({ flexWrap }) => flexWrap || ""};
+  flex-direction: ${({ flexDirection }) => flexDirection || ""};
+
   gap: ${({ gap }) => gap};
 
   && {

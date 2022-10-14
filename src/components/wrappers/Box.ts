@@ -1,7 +1,5 @@
 import styled from 'styled-components/macro';
 import {
-	alignSelf,
-	AlignSelfProps,
 	border,
 	BorderProps,
 	BoxShadowProps,

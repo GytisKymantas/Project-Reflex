@@ -1,100 +1,104 @@
 import React from "react";
 import { Box, Typography } from "components";
 import styled from "styled-components/macro";
-import { Container } from "components/wrappers/Container";
 
 import { StarIcon } from "assets/svg/StarIcon";
+import { useQuery } from "styles/breakpoints";
 import { theme } from "styles/theme";
 import { FlexWrapper } from "components/wrappers/FlexWrapper";
-
-const STARS = ["1", "2", "3", "4", "5"];
+import { STARS } from "constants/constants";
 
 export const TestimonialsSection: React.FC = () => {
+  const { isTablet } = useQuery();
   return (
-    <SectionWrapperStyled>
-      <ContainerStlyed>
+    <SectionWrapperStyled
+      height={{ _: "100%", ltablet: "36.375rem" }}
+      maxWidth="94.5rem"
+      mx="auto"
+    >
+      <Box>
         <Box
-          pt={{ _: "80px", ltablet: "s115" }}
-          mb={{ _: "60px", ltablet: "s125" }}
+          pt={{ _: "s80", ltablet: "s115" }}
+          mb={{ _: "s60", ltablet: "s0" }}
           textAlign={{ _: "center", ltablet: "left" }}
+          ml={{ _: "s0", ltablet: "s200" }}
         >
           <Typography
-            fontWeight={400}
-            fontSize={{ _: "50px", ltablet: "64px" }}
-            lineHeight="84px"
+            fontWeight="fw400"
+            fontSize={{ _: "fs50", ltablet: "fs64" }}
+            lineHeight="lh84"
             color="primary"
           >
             Testimonials
           </Typography>
         </Box>
-
-        <FlexWrapper flexDirection={{ _: "column", ltablet: "row" }}>
-          <Box mr="s105" mb={{ _: "s60", ltablet: "0" }} width="100%">
-            <Author
+        <FlexWrapper
+          mt={{ _: "s0", ltablet: "s95" }}
+          flexDirection={isTablet ? "column" : "row"}
+        >
+          <Box
+            mb={{ _: "s60", ltablet: "s0" }}
+            ml={{ _: "s0", ltablet: "s200" }}
+            width="100%"
+          >
+            <Typography
               color="primary"
               textAlign={{ _: "center", ltablet: "left" }}
+              fontFamily="Open Sans"
+              fontWeight="fw400"
+              fontSize="fs32"
+              lineHeight="lh44"
+              textTransform="uppercase"
+              mb="s10"
             >
               {" "}
               Susana D.{" "}
-            </Author>
-            <Profession
+            </Typography>
+            <Typography
+              fontFamily="Open Sans"
+              fontWeight="fw300"
+              fontSize="fs19"
+              lineHeight="lh27"
+              textTransform="uppercase"
               color="primary"
               textAlign={{ _: "center", ltablet: "left" }}
             >
               {" "}
               Marketing and Communication{" "}
-            </Profession>
+            </Typography>
           </Box>
           <Box>
-            <ParagraphStyled color="primary" pb="s16">
+            <Typography
+              fontFamily="Open Sans"
+              fontStyle="italic"
+              fontWeight="fw300"
+              fontSize="fs20"
+              lineHeight="lh27"
+              textAlign={{ _: "center", ltablet: "left" }}
+              color="primary"
+              pb="s16"
+            >
               {" "}
               “Nunc a condimentum lorem. Nulla quis nisi facilisis, vulputate
               eros vitae, aliquam mi. Pellentesque habitant morbi tristique
               senectus et netus et malesuada fames ac turpis egestas. Cras
               interdum sed nisl quis sollicitudin. Pellentesque sit amet blandit
               lectus, et malesuada libero.”
-            </ParagraphStyled>
-            <Box pb="s150" textAlign={{ _: "center", ltablet: "left" }}>
+            </Typography>
+            <Box
+              pb={{ _: "s80", ltablet: "s140" }}
+              textAlign={{ _: "center", ltablet: "left" }}
+            >
               {STARS.map((star) => (
                 <StarIcon key={star} />
               ))}
             </Box>
           </Box>
         </FlexWrapper>
-      </ContainerStlyed>
+      </Box>
     </SectionWrapperStyled>
   );
 };
 const SectionWrapperStyled = styled(Box)`
-  background: url();
-  background-position: center;
-  background: ${theme.colors.Dark};
+  background: ${theme.colors.lightDark};
 `;
-
-const Author = styled(Typography)`
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  text-transform: uppercase;
-`;
-
-const Profession = styled(Typography)`
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 19px;
-  line-height: 27px;
-  text-transform: uppercase;
-`;
-
-const ParagraphStyled = styled(Typography)`
-  font-family: "Open Sans";
-  font-style: italic;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 27px;
-  display: flex;
-  align-items: center;
-`;
-
-const ContainerStlyed = styled(Container)``;
