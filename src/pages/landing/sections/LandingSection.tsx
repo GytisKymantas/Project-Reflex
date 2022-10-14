@@ -17,7 +17,7 @@ export const LandingSection: React.FC = () => (
       <Box pl={{ _: "0", ltablet: "200px" }}>
         <Box
           pt="64px"
-          mb={{ _: "80px", ltablet: "177.99px" }}
+          mb={{ _: "20px", ltablet: "177.99px" }}
           textAlign={{ _: "center", ltablet: "left" }}
         >
           <Logo />
