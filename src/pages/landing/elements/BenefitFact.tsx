@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Typography } from "components";
+import { Box, Typography, FlexWrapper } from "components";
 
 import { useQuery } from "styles/breakpoints";
-import { FlexWrapper } from "components/wrappers/FlexWrapper";
 
 interface BenefitFactProps {
   icon: React.ReactNode;

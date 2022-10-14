@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Typography, Image } from "components";
-import { FlexWrapper } from "components/wrappers/FlexWrapper";
+import { Box, Typography, Image, FlexWrapper } from "components";
 import styled from "styled-components/macro";
 import { Logo } from "assets/svg/Logo";
 
@@ -16,7 +15,11 @@ export const LandingSection: React.FC = () => (
         <Image src="office" alt="office" height="100vh" width="100%" />
       </BackgroundContainer>
       <Box pl={{ _: "0", ltablet: "200px" }}>
-        <Box p="64px 0" textAlign={{ _: "center", ltablet: "left" }}>
+        <Box
+          pt="64px"
+          mb={{ _: "80px", ltablet: "177.99px" }}
+          textAlign={{ _: "center", ltablet: "left" }}
+        >
           <Logo />
         </Box>
         <Box

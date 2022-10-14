@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Typography, Image } from "components";
+import { Box, Typography, Image, GridWrapper } from "components";
 import styled from "styled-components/macro";
 
 import { BenefitFact } from "../elements/BenefitFact";
 import { useQuery } from "styles/breakpoints";
 import { ICONS } from "constants/constants";
-import { GridWrapper } from "components/wrappers/GridWrapper";
 
 export const BenefitsSection: React.FC = () => {
   const { isLgDesktop } = useQuery();

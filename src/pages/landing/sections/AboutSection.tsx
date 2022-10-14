@@ -1,11 +1,9 @@
 import React from "react";
-import { Box, Typography } from "components";
-import { BaseButton } from "components/buttons/elements/BaseButton";
+import { Box, Typography, FlexWrapper, BaseButton } from "components";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
 import { FeatureCard } from "../elements/FeatureCard";
 import { useQuery } from "styles/breakpoints";
-import { FlexWrapper } from "components/wrappers/FlexWrapper";
 import { ABOUT_ICONS } from "constants/constants";
 
 export const AboutSection: React.FC = () => {

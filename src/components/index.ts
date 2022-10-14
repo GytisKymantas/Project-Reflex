@@ -6,5 +6,8 @@ export * from './wrappers/GridWrapper';
 //texts
 export * from './typography/Typography';
 
+export * from './buttons/elements/BaseButton';
+
+
 //images
 export * from './Image';

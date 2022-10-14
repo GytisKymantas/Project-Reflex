@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Typography } from "components";
+import { Box, Typography, FlexWrapper } from "components";
 import styled from "styled-components/macro";
 
 import { StarIcon } from "assets/svg/StarIcon";
 import { useQuery } from "styles/breakpoints";
 import { theme } from "styles/theme";
-import { FlexWrapper } from "components/wrappers/FlexWrapper";
 import { STARS } from "constants/constants";
 
 export const TestimonialsSection: React.FC = () => {
