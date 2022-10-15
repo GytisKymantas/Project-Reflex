@@ -24,7 +24,7 @@
 
     ```shell
     cd my-gatsby-site/
-    type 'gatsby build'
+    type 'npm start'
     ```
 
 3.  **Open the code and start customizing!**
