@@ -35,13 +35,7 @@ export const BenefitsSection: React.FC = () => {
             pl={{ _: "0", desktop: "200px" }}
             textAlign={{ _: "center", desktop: "left" }}
           >
-            <Typography
-              lineHeight={{ _: "lh63p3", ltablet: "lh84p41" }}
-              color="primary"
-              mb="16px"
-              fontSize={{ _: "fs48", desktop: "fs64" }}
-              fontWeight="fw400"
-            >
+            <Typography color="primary" mb="16px" type="h3">
               Our benefits
             </Typography>
             <Box
@@ -53,7 +47,6 @@ export const BenefitsSection: React.FC = () => {
                 color="primary"
                 fontSize={{ _: "fs16", desktop: "fs20" }}
                 lineHeight={{ _: "lh27p24", ltablet: "lh38" }}
-                type="span"
               >
                 Suspendisse porttitor ex a mollis consectetur. Donec egestas,
                 libero sed viverra sodales, dui eros pulvinar diam, at mollis

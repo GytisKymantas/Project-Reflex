@@ -32,8 +32,8 @@ export const TestimonialsSection: React.FC = () => {
         </Box>
         <FlexWrapper flexDirection={isSmDesktop ? "column" : "row"}>
           <Box
-            mb={{ _: "s60", ltablet: "s0" }}
-            ml={{ _: "s0", ltablet: "s200" }}
+            mb={{ _: "60px", ltablet: "0" }}
+            ml={{ _: "0", ltablet: "200px" }}
           >
             <Box width="163px" mx={{ _: "auto", ltablet: "0" }}>
               <Typography
@@ -44,6 +44,7 @@ export const TestimonialsSection: React.FC = () => {
                 fontSize="fs32"
                 lineHeight="lh44"
                 textTransform="uppercase"
+                type="h4"
               >
                 Susana D.
               </Typography>
@@ -75,7 +76,6 @@ export const TestimonialsSection: React.FC = () => {
               lineHeight="lh27p24"
               textAlign={{ _: "center", ltablet: "left" }}
               color="primary"
-              mb="s16"
             >
               “Nunc a condimentum lorem. Nulla quis nisi facilisis, vulputate
               eros vitae, aliquam mi. Pellentesque habitant morbi tristique
@@ -84,6 +84,7 @@ export const TestimonialsSection: React.FC = () => {
               lectus, et malesuada libero.”
             </Typography>
             <FlexWrapper
+              mt="16px"
               gap="6px"
               justifyContent={isSmDesktop ? "center" : "row"}
             >

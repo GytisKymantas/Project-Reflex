@@ -24,12 +24,7 @@ export const AboutSection: React.FC = () => {
           textAlign={{ _: "center", desktop: "left" }}
           mx="auto"
         >
-          <Typography
-            color="primary"
-            fontWeight="fw400"
-            fontSize="fs64"
-            lineHeight="lh84p41"
-          >
+          <Typography color="primary" type="h2">
             About our features
           </Typography>
         </Box>

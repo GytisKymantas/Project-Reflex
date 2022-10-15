@@ -18,15 +18,14 @@ import { Colors, Theme } from "styles/theme";
 
 import { applyTextType } from "./TypographyHelpers";
 
-export type TextType = "h1" | "h2" | "h3" | "body16" | "caption12" | "span";
+export type TextType = "h1" | "h2" | "h3" | "h4" | "body16";
 
 export enum TextTag {
   "h1" = "h1",
   "h2" = "h2",
   "h3" = "h3",
-  "span" = "span",
-  "body16" = "p",
-  "caption12" = "p",
+  "h4" = "h4",
+  "body16" = "body16",
 }
 
 type AsAttributeType = string | React.ComponentType;

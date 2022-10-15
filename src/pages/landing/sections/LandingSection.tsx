@@ -24,17 +24,14 @@ export const LandingSection: React.FC = () => (
         </Box>
         <Box
           width={{ _: "100%", ltablet: "548px" }}
-          mx={{ _: "auto", ltablet: "s0" }}
+          mx={{ _: "auto", ltablet: "0" }}
         >
           <FlexWrapper justifyContent="center" width="100%">
             <Typography
               color="primary"
-              fontFamily="Roboto Slab"
               textAlign={{ _: "center", ltablet: "left" }}
-              lineHeight="lh63p3"
-              fontSize="fs48"
-              fontWeight="fw400"
               mb="10px"
+              type="h1"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
